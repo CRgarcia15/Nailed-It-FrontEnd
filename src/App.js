@@ -1,6 +1,7 @@
 import './App.css';
 import Nav from "./components/navBar"
 import Title from "./components/titleCard"
+import Form from "./components/createProject"
 
 function App() {
   return (
