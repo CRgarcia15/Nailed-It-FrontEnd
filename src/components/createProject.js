@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from 'react-router-dom'
 
 function projectForm() {
     return (
@@ -48,11 +49,11 @@ function projectForm() {
           <input className="w-1/5 text-amber-700 ring-2 ring-amber-700 rounded p-2 px-4 mx-auto transition ease-in-out delay-100 hover:bg-amber-200/50 duration-300" type="submit"/>
         </form>
         <div>
-          <a href=''>
+          <Link to="/">
           <button className="text-zinc-700 font-semibold ring-2 ring-zinc-700 rounded p-2 ml-2 px-4 transition ease-in-out delay-100 hover:bg-zinc-200/50 duration-300">
             Back
           </button>
-          </a>
+          </Link>
           </div>
         </section>
     )
