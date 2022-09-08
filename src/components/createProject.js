@@ -46,11 +46,11 @@ function projectForm() {
             name="cost"
             id="cost"
           />
-          <input className="w-1/5 text-amber-700 ring-2 ring-amber-700 rounded p-2 px-4 mx-auto transition ease-in-out delay-100 hover:bg-amber-200/50 duration-300" type="submit"/>
+          <input className="w-1/5 text-amber-700 ring-2 ring-amber-700 rounded p-2 px-4 mx-auto transition ease-in-out delay-100 hover:bg-amber-300/50 duration-300" type="submit"/>
         </form>
         <div>
-          <Link to="/">
-          <button className="text-zinc-700 font-semibold ring-2 ring-zinc-700 rounded p-2 ml-2 px-4 transition ease-in-out delay-100 hover:bg-zinc-200/50 duration-300">
+          <Link to="/" className="transition ease-in-out delay-100">
+          <button className="text-zinc-700 font-semibold ring-2 ring-zinc-700 rounded p-2 ml-2 px-4 transition ease-in-out delay-100 hover:bg-zinc-400/50 duration-300">
             Back
           </button>
           </Link>
