@@ -20,6 +20,3 @@ function Err () {
 }
 
 export default Err;
-
-choose the medical leave 
-
