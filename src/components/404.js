@@ -1,20 +1,25 @@
 import React from "react";
-//img doesn't want to load properly, look for another one.
+import image from "../images/Tim-Allen-wrench.webp"
 //need to add styling
 function Err () {
+    const imageErr = image
     return   (
         <div className="bg-zinc-300 w-screen h-screen">
 
-            <h1 className='font-roboto text-9xl text-zinc-600 pb-2 flex shrink font-bold'>Oops!!</h1>
-
-            <img src="./Tim-Allen-wrench.webp" alt=" "/> 
-
-            <div className="flex flex-col w-4/5 h-1/3 mx-auto mt-40 mr-40">
-            <h1 className='font-roboto text-zinc-500 text-2xl flex shrink mt-5 ml-40 font-bold'>Here, have a hammer and start over! A good project is rarely succesful on the first try.</h1>
-            <p className='font-roboto text-zinc-500 text-2xl flex shrink mt-5 ml-40'>Is ok, you we can help you find your mojo back.</p>
+            <h1 className='font-roboto text-9xl text-zinc-600 pb-2 flex shrink font-bold ml-20'>Oops!!</h1>
+            
+            <div className="mt-5">
+                <img src={imageErr} alt=" "/> 
+            </div>
+        
+            <div className="flex flex-col w-4/5 h-1/3 mx-auto mt-40 mr-40 mt-10">
+                 <h1 className='font-roboto text-zinc-500 text-2xl flex shrink mt-5 ml-40 font-bold'>It'll buff out! A good project is rarely succesful on the first try.</h1>
+                 <p className='font-roboto text-zinc-500 text-2xl flex shrink mt-5 ml-40'>Is ok, you we can help you find your mojo back.</p>
+                 <a href="explore" className="ml-20 text-amber-700 mt-5 bg-zinc-300 hover:bg-amber-700 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">Explore More</a>
             </div>
 
-            <a href="explore">Explore More</a>
+           
+           
         </div>
     )
 }
