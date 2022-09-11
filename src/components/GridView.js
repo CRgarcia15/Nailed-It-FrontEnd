@@ -1,5 +1,7 @@
 import {React, useState,useEffect} from "react";
-
+/*
+Need to test the gridview to see how it looks
+*/ 
 function GridView () {
     const [ project, setProject ] = useState({});
 
@@ -24,7 +26,7 @@ function GridView () {
             </div>
         )
     }
-    
+
     return(
         <div>
             { view }
