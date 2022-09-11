@@ -3,7 +3,8 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import Nav from "./components/navBar"
 import Title from "./components/titleCard"
 import Form from "./components/createProject"
-import GridView from './components/GridView'
+import Project from "./components/singleProject"
+import GridView from "./components/GridView"
 import { useState, useEffect } from "react"
 
 function App() {
@@ -13,9 +14,9 @@ function App() {
         <Nav />
         <main className="h-full w-4/5 px-20 container mx-auto bg-zinc-300">
           <Routes>
-            <Route path="/" element={<Title />} />
+            <Route path="/" element={<GridView />} />
             <Route path="/create" element={<Form />} />
-            <Route path="/Project/id" element={<GridView />} />
+            <Route path="/Project/id" element={<Project />} />
           </Routes>
           
         </main>
