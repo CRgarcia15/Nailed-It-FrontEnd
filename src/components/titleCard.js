@@ -15,6 +15,7 @@ function Title() {
       <div className='w-3/4'>
         <p className='font-roboto text-zinc-500 text-xl mt-8 ml-60'>with the goal of connecting people passionate about doing it yourself, and providing them with the information they need to be successful in whatever project they choose to take on!</p>
       </div>
+      <div className="w-3/4 border-b-4 border-amber-700 rounded-3xl ml-36 mt-7"></div>
     </section>
   );
 }
