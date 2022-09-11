@@ -5,7 +5,7 @@ function Err () {
     const imageErr = image
     return (
         <div className="bg-zinc-300 w-screen h-screen">
-            <h1 className='font-roboto text-9xl text-zinc-600 pb-2 flex shrink font-bold '>Oops!!</h1>
+            <h1 className='font-roboto text-9xl text-zinc-600 pb-2 flex shrink font-bold '>Oops!! 404 Not Found.</h1>
                 
             <div className="mt-5">
                 <img src={imageErr} alt=" " className="ml-10"/> 
