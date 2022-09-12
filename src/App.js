@@ -4,7 +4,8 @@ import Nav from "./components/navBar"
 import Title from "./components/titleCard"
 import Form from "./components/createProject"
 import Project from "./components/singleProject"
-import { useState, useEffect } from "react"
+import Err from "./components/404"
+import Grid from "./components/projectGridView"
 
 function App() {
   return (
@@ -16,6 +17,8 @@ function App() {
             <Route path="/" element={<Title />} />
             <Route path="/create" element={<Form />} />
             <Route path="/Project/id" element={<Project />} />
+            <Route path="/explore" element={<Grid />} />
+            <Route path="*" element={<Err />} />
           </Routes>
           
         </main>
