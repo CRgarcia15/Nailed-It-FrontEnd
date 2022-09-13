@@ -5,6 +5,7 @@ import Nav from "./components/navBar"
 import Form from "./components/createProject"
 import Project from "./components/singleProject"
 import GridView from "./components/GridView"
+import Err from "./components/404"
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
             <Route path="/" element={<GridView />} />
             <Route path="/create" element={<Form />} />
             <Route path="/Project/id" element={<Project />} />
+            <Route path="/404" element={<Err />} />
           </Routes>
           
         </main>
