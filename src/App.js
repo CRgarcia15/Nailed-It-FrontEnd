@@ -1,11 +1,10 @@
 import './App.css';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import Nav from "./components/navBar"
-import Title from "./components/titleCard"
+//import Title from "./components/titleCard"
 import Form from "./components/createProject"
 import Project from "./components/singleProject"
 import GridView from "./components/GridView"
-import { useState, useEffect } from "react"
 
 function App() {
   return (

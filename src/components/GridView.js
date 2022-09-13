@@ -1,35 +1,18 @@
-import {React, useState,useEffect} from "react";
+import React from "react";
 /*
-Need to test the gridview to see how it looks
+Need to import the API then use .map to display the content.
+Limit to 9 projects per page.
 */ 
 function GridView () {
-    const [ project, setProject ] = useState({});
-
-    useEffect(() => {
+    const projects = () => {
         fetch("http://localhost:8080/projects/1")
-            .then((res) => res.json())
-            .then((project) => setProject(project));
-    }, []);
-    
-    const viewStyle = {
-        'display': 'grid'
-    }
-    
-    const view = () => {
-        return (
-            <div style={viewStyle}>
-                <h3>{project.item.name}</h3>
-                <img src="http://placekitten.com/200/300"/>
-                <h4>Category: {project.item.category}</h4>
-                <h4>time: {project.item.time}</h4>
-                <h4>Cost: ${project.item.cost}</h4>
-            </div>
-        )
+        .then((res) => res.json())
+        .then((json) => console.log(json))
     }
 
     return(
         <div>
-            { view }
+           <h1>working on it!</h1>
         </div>
     )
 }
