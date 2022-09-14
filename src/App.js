@@ -1,11 +1,11 @@
 import './App.css';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import Nav from "./components/navBar"
-//import Title from "./components/titleCard"
+import Title from "./components/titleCard"
 import Form from "./components/createProject"
 import Project from "./components/singleProject"
-import GridView from "./components/GridView"
 import Err from "./components/404"
+import Grid from "./components/GridView"
 
 function App() {
   return (
@@ -14,10 +14,11 @@ function App() {
         <Nav />
         <main className="h-full w-4/5 px-20 container mx-auto bg-zinc-300">
           <Routes>
-            <Route path="/" element={<GridView />} />
+            <Route path="/" element={<Title />} />
             <Route path="/create" element={<Form />} />
             <Route path="/Project/id" element={<Project />} />
-            <Route path="/404" element={<Err />} />
+            <Route path="/explore" element={<Grid />} />
+            <Route path="*" element={<Err />} />
           </Routes>
           
         </main>

@@ -16,7 +16,7 @@ function nav_Bar() {
           </Link>
         </div>
         <div className="flex-none w-full Sh-full text-zinc-600 text-center font-bold">
-          <Link to="" className='hover:text-amber-700'>
+          <Link to="/explore" className='hover:text-amber-700'>
             <button className="text-amber-700">03.</button> Explore
           </Link>
         </div>
