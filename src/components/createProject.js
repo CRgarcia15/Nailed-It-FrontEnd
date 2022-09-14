@@ -8,7 +8,7 @@ function ProjectForm() {
     const [ time, setTime ] = useState('')
     const [ category, setCategory ] = useState('')
     const [ materials, setMaterials ] = useState('')
-    const [ cost,  setCost ] = useState('')
+    const [ cost, setCost ] = useState('')
 
     const handleSubmit = (e) => {
       e.preventDefault();

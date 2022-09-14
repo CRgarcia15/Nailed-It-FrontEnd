@@ -5,7 +5,7 @@ function SingleProject() {
     const [ project, setProject ] = useState({});
 
     useEffect(() => {
-        fetch("https://nailed-it-server.herokuapp.com/projects/1")
+        fetch("https://nailed-it-server.herokuapp.com/projects/631e11f5daf383ae058267df")
             .then((res) => res.json())
             .then((project) => setProject(project));
     }, []);
