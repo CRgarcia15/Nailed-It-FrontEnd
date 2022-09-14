@@ -9,24 +9,22 @@ function GridView () {
             .then((res) => res.json())
             .then((project) => setProject(project))
     }, [])
-    console.log(project)
-
-    const display = project.map(() => {
-        return (
-            <div>
-            <img src="http://placekitten.com/200/300" alt=""/>
-            <h1><strong>Name:</strong> {project.name}</h1>
-            <h3><strong>Category:</strong> {project.category}</h3>
-            <h3><strong>Time:</strong> {project.time}</h3>
-            <h3><strong>Cost:</strong> {project.cost}</h3>
-         </div>
-        )
-    })
-
+           
     return(
         <div>
-            {display}
-         </div>
+            <div className="w-full h-full space-y-10">
+                {project.map((project, index) => {
+                    return <div className="w-1/4 h-1/4" key={index}>
+                        <ul>
+                            <li className="text-4xl">Name: {project.name}</li>
+                            <li>Category: {project.category}</li>
+                            <li>Cost: ${project.cost}</li>
+                            <li>Time: {project.time} hour(s)</li>
+                        </ul>
+                    </div>
+                })}
+            </div>
+        </div>
     )
 }
 
