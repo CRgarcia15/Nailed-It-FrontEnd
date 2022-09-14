@@ -5,7 +5,7 @@ function SingleProject() {
     const [ project, setProject ] = useState({});
 
     useEffect(() => {
-        fetch("http://localhost:8080/projects/1")
+        fetch("http://localhost:8080/projects/")
             .then((res) => res.json())
             .then((project) => setProject(project));
     }, []);
