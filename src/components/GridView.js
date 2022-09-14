@@ -12,7 +12,8 @@ function GridView () {
            
     return(
         <div>
-            <div className="w-full h-full space-y-10">
+            <div 
+             className="w-full h-full space-y-10">
                 {project.map((project, index) => {
                     return <div className="w-1/4 h-1/4" key={index}>
                         <ul>
@@ -21,6 +22,7 @@ function GridView () {
                             <li>Cost: ${project.cost}</li>
                             <li>Time: {project.time} hour(s)</li>
                         </ul>
+                        <button key={project.id} onClick={() => console.log(index)}>{project.name}</button>
                     </div>
                 })}
             </div>
