@@ -1,5 +1,11 @@
 import './App.css';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  Link,
+  useParams
+} from "react-router-dom";
 import Nav from "./components/navBar"
 import Title from "./components/titleCard"
 import Form from "./components/createProject"
@@ -16,9 +22,9 @@ function App() {
           <Routes>
             <Route path="/" element={<Title />} />
             <Route path="/create" element={<Form />} />
-            <Route path="/Project/id" element={<Project />} />
             <Route path="/explore" element={<Grid />} />
             <Route path="*" element={<Err />} />
+            <Route path="/project/:id" element={<Project />} />
           </Routes>
           
         </main>

@@ -1,14 +1,17 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
+import { useParams } from "react-router-dom"
 
 function SingleProject() {
     const [ project, setProject ] = useState({});
-
+    let { id } = useParams();
+    
     useEffect(() => {
-        fetch("https://nailed-it-server.herokuapp.com/projects/631e11f5daf383ae058267df")
+        const singleProjectAPI = `http://localhost:8080/projects/${id}`
+        fetch(singleProjectAPI)
             .then((res) => res.json())
             .then((project) => setProject(project));
-    }, []);
+    }, [id]);
 
     return (
         <section className="w-full h-4/5 mx-auto flex flex-row flex-wrap rounded-2xl bg-zinc-200 drop-shadow-2xl">
