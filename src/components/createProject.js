@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { useState } from 'react'
 
 function ProjectForm() {
@@ -9,6 +9,7 @@ function ProjectForm() {
     const [ category, setCategory ] = useState('')
     const [ materials, setMaterials ] = useState('')
     const [ cost, setCost ] = useState('')
+    const navigate = useNavigate();
 
     const handleSubmit = (e) => {
       e.preventDefault();
@@ -21,6 +22,7 @@ function ProjectForm() {
       }).then(() => {
         console.log('New Project Added')
       })
+      navigate('/explore')
       }; 
 
     return (

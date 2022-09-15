@@ -1,17 +1,33 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
-import { useParams, Link } from "react-router-dom"
+import { useParams, Link, useNavigate } from "react-router-dom"
 
 function SingleProject() {
     const [ project, setProject ] = useState({});
-    let { id } = useParams();
+    const { id } = useParams();
+    const singleProjectAPI = `http://localhost:8080/projects/${id}`
+    const navigate = useNavigate()
     
+    
+
     useEffect(() => {
-        const singleProjectAPI = `http://localhost:8080/projects/${id}`
         fetch(singleProjectAPI)
             .then((res) => res.json())
             .then((project) => setProject(project));
     }, [id]);
+
+
+    const HandleDelete = (e) => {
+      e.preventDefault();
+      fetch(singleProjectAPI, {
+        method: 'DELETE'
+      }).then((res) => {
+        res.json().then((response) => {
+            console.log(response)
+        })
+      })
+      navigate('/explore')
+      }; 
 
     return (
         <section className="w-full h-4/5 mx-auto flex flex-row flex-wrap rounded-2xl bg-zinc-200 drop-shadow-2xl">
@@ -25,7 +41,7 @@ function SingleProject() {
                     <p className="text-zinc-600 text-lg pl-4 pt-3 pr-4 font-semibold">{project.details}</p>
                 </div>
                 <div className="flex">
-                    <form action={`/projects/${project._id}?_method=DELETE`} method="POST">
+                    <form onSubmit={HandleDelete}>
                         <button className=" text-red-700 ring-2 ring-red-700 rounded p-2 mt-64  px-4 ml-4 transition ease-in-out delay-100 hover:bg-red-300/50 duration-300" type="submit" value="DELETE">DELETE</button>
                     </form>
                     <Link to={`/projects/edit/${project._id}`}>

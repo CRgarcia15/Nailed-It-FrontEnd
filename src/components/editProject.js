@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState, useEffect } from "react"
-import { Link, useParams } from 'react-router-dom'
+import { Link, useParams, useNavigate } from 'react-router-dom'
 
 function EditForm() {
     const [ project, setProject ] = useState({});
@@ -12,6 +12,7 @@ function EditForm() {
     const [ category, setCategory ] = useState('')
     const [ materials, setMaterials ] = useState('')
     const [ cost, setCost ] = useState('')
+    const navigate = useNavigate()
 
     useEffect(() => {
         fetch(singleProjectAPI)
@@ -21,7 +22,6 @@ function EditForm() {
     console.log(project)
 
     const handleSubmit = (e) => {
-      e.preventDefault();
       const updatedProject = { name, details, time, category, materials, cost }
       fetch(singleProjectAPI, {
         method: 'PUT',
@@ -30,6 +30,7 @@ function EditForm() {
       }).then(() => {
         console.log('Project Updated')
       })
+      navigate('/explore')
       }; 
 
     return (
@@ -98,7 +99,7 @@ function EditForm() {
           <button className="w-1/6 text-amber-700 ring-2 ring-amber-700 rounded p-2 px-4 mx-auto transition ease-in-out delay-100 hover:bg-amber-300/50 duration-300" type="submit">EDIT</button>
         </form>
         <div>
-          <Link to="/" className="transition ease-in-out delay-100">
+          <Link to={`/project/${project._id}`} className="transition ease-in-out delay-100">
           <button className="text-zinc-700 font-semibold ring-2 ring-zinc-700 rounded p-2 ml-2 px-4 transition ease-in-out delay-100 hover:bg-zinc-400/50 duration-300">
             Back
           </button>
