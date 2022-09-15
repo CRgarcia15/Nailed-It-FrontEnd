@@ -5,7 +5,7 @@ import { Link, useParams, useNavigate } from 'react-router-dom'
 function EditForm() {
     const [ project, setProject ] = useState({});
     const { id } = useParams();
-    const singleProjectAPI = `http://localhost:8080/projects/${id}`
+    const singleProjectAPI = `https://nailed-it-server.herokuapp.com/projects/${id}`
     const [ name, setName ] = useState('')
     const [ details, setDetails ] = useState('')
     const [ time, setTime ] = useState('')

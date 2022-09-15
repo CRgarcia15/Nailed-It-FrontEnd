@@ -15,7 +15,7 @@ function ProjectForm() {
       e.preventDefault();
       const project = { name, details, time, category, materials, cost }
       
-      fetch('http://localhost:8080/projects', {
+      fetch('https://nailed-it-server.herokuapp.com/projects', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(project)

@@ -5,7 +5,7 @@ import { useParams, Link, useNavigate } from "react-router-dom"
 function SingleProject() {
     const [ project, setProject ] = useState({});
     const { id } = useParams();
-    const singleProjectAPI = `http://localhost:8080/projects/${id}`
+    const singleProjectAPI = `https://nailed-it-server.herokuapp.com/projects/${id}`
     const navigate = useNavigate()
     
     
