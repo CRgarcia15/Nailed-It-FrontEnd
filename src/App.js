@@ -1,11 +1,18 @@
 import './App.css';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  Link,
+  useParams
+} from "react-router-dom";
 import Nav from "./components/navBar"
 import Title from "./components/titleCard"
 import Form from "./components/createProject"
 import Project from "./components/singleProject"
 import Err from "./components/404"
-import Grid from "./components/GridView"
+import Grid from "./components/projectGridView"
+import Edit from './components/editProject'
 
 function App() {
   return (
@@ -16,9 +23,10 @@ function App() {
           <Routes>
             <Route path="/" element={<Title />} />
             <Route path="/create" element={<Form />} />
-            <Route path="/project/id" element={<Project />} />
             <Route path="/explore" element={<Grid />} />
             <Route path="*" element={<Err />} />
+            <Route path="/project/:id" element={<Project />} />
+            <Route path='/projects/edit/:id' element={<Edit />} />
           </Routes>
           
         </main>

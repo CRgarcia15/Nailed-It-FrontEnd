@@ -1,6 +1,6 @@
 import React from "react";
 
-function Title() {
+function title() {
   return (
     <section className='flex flex-col w-4/5 h-1/3 mx-auto mt-40 mr-40'>
       <div className="flex shrink">
@@ -20,4 +20,4 @@ function Title() {
   );
 }
 
-export default Title;
+export default title;

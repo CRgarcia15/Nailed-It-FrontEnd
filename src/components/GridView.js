@@ -1,32 +1,29 @@
 import React from "react";
-import {useState, useEffect} from 'react';
-import { useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react"
+import { Link } from 'react-router-dom'
 
 function GridView () {
-    const [ project, setProject ] = useState([]);
-    const navigate = useNavigate()
+    const [ projects, setProjects ] = useState([]);
 
     useEffect(() => {
-        fetch("http://localhost:8080/projects")
+        const gridProjectAPI = `http://localhost:8080/projects`
+        fetch(gridProjectAPI)
             .then((res) => res.json())
-            .then((project) => setProject(project))
-    }, [])
+            .then((projects) => setProjects(projects));
+    }, []);
 
-    function expandedView (index) {
-        navigate(`project/${index}`)
-    }
-           
     return(
         <div>
-            <div key={project.id} onClick={expandedView} className="w-full h-full space-y-10">
-                {project.map((project, index) => {
+            <div className="w-full h-full grid grid-cols-3 space-x-10 mt-20">
+                {projects.map((project, index) => {
                     return <div className="w-1/4 h-1/4" key={index}>
+                        <Link to={`/project/${project._id}`} >
                         <ul>
-                            <li className="text-4xl">Name: {project.name}</li>
-                            <li>Category: {project.category}</li>
-                            <li>Cost: ${project.cost}</li>
-                            <li>Time: {project.time} hour(s)</li>
+                            <li className="text-4xl">{project.name}</li>
+                            <li>{project.category}</li>
+                            <li>{project.cost}</li>
                         </ul>
+                        </Link>
                     </div>
                 })}
             </div>
