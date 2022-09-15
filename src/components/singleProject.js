@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
-import { useParams } from "react-router-dom"
+import { useParams, Link } from "react-router-dom"
 
 function SingleProject() {
     const [ project, setProject ] = useState({});
@@ -24,10 +24,13 @@ function SingleProject() {
                     <h3 className="text-zinc-600 font-bold text-2xl pl-4 pt-6">Details:</h3>
                     <p className="text-zinc-600 text-lg pl-4 pt-3 pr-4 font-semibold">{project.details}</p>
                 </div>
-                <div>
-                    <form action={`/projects/${project.id}?_method=DELETE`} method="POST">
-                        <button className="w-1/6 text-red-700 ring-2 ring-red-700 rounded p-2 mt-64  px-4 ml-4 transition ease-in-out delay-100 hover:bg-red-300/50 duration-300" type="submit" value="DELETE">DELETE</button>
+                <div className="flex">
+                    <form action={`/projects/${project._id}?_method=DELETE`} method="POST">
+                        <button className=" text-red-700 ring-2 ring-red-700 rounded p-2 mt-64  px-4 ml-4 transition ease-in-out delay-100 hover:bg-red-300/50 duration-300" type="submit" value="DELETE">DELETE</button>
                     </form>
+                    <Link to={`/projects/edit/${project._id}`}>
+                    <button className=" text-zinc-700 ring-2 ring-zinc-700 rounded p-2 mt-64  px-6 ml-4 transition ease-in-out delay-100 hover:bg-zinc-300/50 duration-300">EDIT</button>
+                    </Link>
                 </div>
             </div>
             <div className="w-1/2 h-full">

@@ -6,7 +6,8 @@ function GridView () {
     const [ projects, setProjects ] = useState([]);
 
     useEffect(() => {
-        fetch("http://localhost:8080/projects")
+        const gridProjectAPI = `http://localhost:8080/projects`
+        fetch(gridProjectAPI)
             .then((res) => res.json())
             .then((projects) => setProjects(projects));
     }, []);

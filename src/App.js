@@ -12,6 +12,7 @@ import Form from "./components/createProject"
 import Project from "./components/singleProject"
 import Err from "./components/404"
 import Grid from "./components/projectGridView"
+import Edit from './components/editProject'
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
             <Route path="/explore" element={<Grid />} />
             <Route path="*" element={<Err />} />
             <Route path="/project/:id" element={<Project />} />
+            <Route path='/projects/edit/:id' element={<Edit />} />
           </Routes>
           
         </main>
