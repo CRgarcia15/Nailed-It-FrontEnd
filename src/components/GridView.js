@@ -14,14 +14,15 @@ function GridView () {
 
     return(
         <div>
-            <div className="w-full h-full grid grid-cols-3 space-x-10 mt-20">
+            <div className="w-full h-full grid grid-cols-3 space-x-10 mt-20 ">
                 {projects.map((project, index) => {
-                    return <div className="w-1/4 h-1/4" key={index}>
+                    return <div className="w-50 h-50 hover:shadow-xl hover:bg-zinc-400 hover:transition mx-1.5 bg-zinc-300 rounded-md px-5 py-2" key={index}>
                         <Link to={`/project/${project._id}`} >
                         <ul>
-                            <li className="text-4xl">{project.name}</li>
-                            <li>{project.category}</li>
-                            <li>{project.cost}</li>
+                            <li className="text-4xl font-semibold">{project.name}</li>
+                            <li>Category: {project.category}</li>
+                            <li>cost: ${project.cost}</li>
+                            <li>Time: {project.time} hour(s)</li>
                         </ul>
                         </Link>
                     </div>
