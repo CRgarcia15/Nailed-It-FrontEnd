@@ -34,12 +34,12 @@ function EditForm() {
       }; 
 
     return (
-        <section className="w-4/5 h-5/6 bg-zinc-200 pt-5 px-3 py-2 rounded-2xl drop-shadow-2xl mx-auto mt-6">
-            <h2 className="text-zinc-600 font-bold text-4xl text-amber-700 text-center pt-3 pb-10">Add a New Project</h2>
-        <form className="grid grid-rows-8 text-zinc-600 font-bold space-y-3" onSubmit={handleSubmit}>
+        <section className="w-3/5 h-11/12 bg-zinc-200 px-3 py-6 rounded-2xl drop-shadow-2xl mx-auto">
+            <h2 className="text-zinc-600 font-bold text-4xl text-amber-700 text-center pb-6">Edit this Project</h2>
+        <form className="grid grid-rows-8 text-zinc-600 font-bold space-y-2" onSubmit={handleSubmit}>
           <label className="ml-52 text-lg" htmlFor="projectName">Project Name</label>
           <input
-            className="w-1/2 border border-zinc-400 px-3 py-2 rounded-lg shadow-sm mx-auto focus:outline-none focus:border-amber-600"
+            className="w-1/2 text-sm font-semibold border border-zinc-400 px-3 py-2 rounded-lg shadow-sm mx-auto focus:outline-none focus:border-amber-600"
             type="text"
             name="name"
             onChange={(e) => setName(e.target.value)}
@@ -48,7 +48,7 @@ function EditForm() {
           />
           <label className="ml-52 text-lg" htmlFor="projectDetails">Project Details</label>
           <textarea
-            className="w-1/2 border border-zinc-400 px-3 py-2 rounded-lg shadow-sm mx-auto focus:outline-none focus:border-amber-600"
+            className="w-1/2 text-sm font-semibold border border-zinc-400 px-3 py-2 rounded-lg shadow-sm mx-auto focus:outline-none focus:border-amber-600"
             type="text"
             name="details"
             rows="5"
@@ -59,7 +59,7 @@ function EditForm() {
           <br />
           <label className="ml-52 text-lg" htmlFor="projectCost">Time (hours)</label>
           <input
-            className="w-1/2 border border-zinc-400 px-3 py-2 rounded-lg shadow-sm mx-auto focus:outline-none focus:border-amber-600"
+            className="w-1/2 text-sm font-semibold border border-zinc-400 px-3 py-2 rounded-lg shadow-sm mx-auto focus:outline-none focus:border-amber-600"
             type="number"
             name="time"
             onChange={(e) => setTime(e.target.value)}
@@ -67,7 +67,7 @@ function EditForm() {
           />
           <label className="ml-52 text-lg" htmlFor="category">Category</label>
           <select 
-          className="w-1/2 border border-zinc-400 px-3 py-2 rounded-lg shadow-sm mx-auto focus:outline-none focus:border-amber-600" 
+          className="w-1/2 text-sm font-semibold border border-zinc-400 px-3 py-2 rounded-lg shadow-sm mx-auto focus:outline-none focus:border-amber-600" 
           name="category"
           defaultValue={project.category} 
           onChange={(e) => setCategory(e.target.value)}>
@@ -82,7 +82,7 @@ function EditForm() {
           </select>
           <label className="ml-52 text-lg" htmlFor="projectMaterials">Project Materials</label>
           <input
-            className="w-1/2 border border-zinc-400 px-3 py-2 rounded-lg shadow-sm mx-auto focus:outline-none focus:border-amber-600"
+            className="w-1/2 text-sm font-semibold border border-zinc-400 px-3 py-2 rounded-lg shadow-sm mx-auto focus:outline-none focus:border-amber-600"
             type="text"
             name="materials"
             defaultValue={project.materials}
@@ -90,7 +90,7 @@ function EditForm() {
           />
           <label className="ml-52 text-lg" htmlFor="projectCost">Project Cost</label>
           <input
-            className="w-1/2 border border-zinc-400 px-3 py-2 rounded-lg shadow-sm mx-auto focus:outline-none focus:border-amber-600"
+            className="w-1/2 text-sm font-semibold border border-zinc-400 px-3 py-2 rounded-lg shadow-sm mx-auto focus:outline-none focus:border-amber-600"
             type="number"
             name="cost"
             defaultValue={project.cost}

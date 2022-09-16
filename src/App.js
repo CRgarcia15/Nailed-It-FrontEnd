@@ -2,9 +2,7 @@ import './App.css';
 import {
   BrowserRouter as Router,
   Route,
-  Routes,
-  Link,
-  useParams
+  Routes
 } from "react-router-dom";
 import Nav from "./components/navBar"
 import Title from "./components/titleCard"
@@ -17,9 +15,9 @@ import Edit from './components/editProject'
 function App() {
   return (
     <Router>
-      <div id="content" className="bg-zinc-300 w-screen h-screen">
+      <div id="content" className="w-screen h-screen bg-zinc-300">
         <Nav />
-        <main className="h-full w-4/5 px-20 container mx-auto bg-zinc-300">
+        <main className="h-screen w-4/5 container mx-auto bg-zinc-300">
           <Routes>
             <Route path="/" element={<Title />} />
             <Route path="/create" element={<Form />} />
