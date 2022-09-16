@@ -6,7 +6,7 @@ function GridView () {
     const [ projects, setProjects ] = useState([]);
 
     useEffect(() => {
-        const gridProjectAPI = `http://localhost:8080/projects`
+        const gridProjectAPI = `https://nailed-it-server.herokuapp.com/projects`
         fetch(gridProjectAPI)
             .then((res) => res.json())
             .then((projects) => setProjects(projects));

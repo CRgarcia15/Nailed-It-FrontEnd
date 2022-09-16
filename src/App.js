@@ -9,7 +9,7 @@ import Title from "./components/titleCard"
 import Form from "./components/createProject"
 import Project from "./components/singleProject"
 import Err from "./components/404"
-import Grid from "./components/projectGridView"
+import Grid from "./components/GridView"
 import Edit from './components/editProject'
 
 function App() {
