@@ -2,6 +2,17 @@ import React from 'react';
 import { useState, useEffect } from "react"
 import { Link, useParams, useNavigate } from 'react-router-dom'
 
+interface ProjectItem {
+  _id: number,
+  name: string,
+  details: string,
+  steps: string,
+  time: number,
+  category: string,
+  materials: string,
+  cost: number
+}
+
 function EditForm() {
     const [ project, setProject ] = useState({});
     const { id } = useParams();
@@ -21,7 +32,7 @@ function EditForm() {
     }, []);
     console.log(project)
 
-    const handleSubmit = (e) => {
+    const handleSubmit = (e: any) => {
       const updatedProject = { name, details, time, category, materials, cost }
       fetch(singleProjectAPI, {
         method: 'PUT',

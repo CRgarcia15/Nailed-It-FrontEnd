@@ -11,7 +11,7 @@ function ProjectForm() {
     const [ cost, setCost ] = useState('')
     const navigate = useNavigate();
 
-    const handleSubmit = (e) => {
+    const handleSubmit = (e: any) => {
       e.preventDefault();
       const project = { name, details, time, category, materials, cost }
       

@@ -11,6 +11,7 @@ import Project from "./components/singleProject"
 import Err from "./components/404"
 import Grid from "./components/GridView"
 import Edit from './components/editProject'
+import React from 'react';
 
 function App() {
   return (

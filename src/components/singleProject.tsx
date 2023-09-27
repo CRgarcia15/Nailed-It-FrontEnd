@@ -2,8 +2,19 @@ import React from 'react'
 import { useState, useEffect } from 'react'
 import { useParams, Link, useNavigate } from "react-router-dom"
 
+// interface ProjectItem {
+//     _id: number,
+//     name: string,
+//     details: string,
+//     steps: string,
+//     time: number,
+//     category: string,
+//     materials: string,
+//     cost: number
+// }
+
 function SingleProject() {
-    const [ project, setProject ] = useState({});
+    const [ project, setProject ] = useState<object>({});
     const { id } = useParams();
     const singleProjectAPI = `https://nailed-it-server.herokuapp.com/projects/${id}`
     const navigate = useNavigate()
@@ -17,7 +28,7 @@ function SingleProject() {
     }, [id]);
 
 
-    const HandleDelete = (e) => {
+    const HandleDelete = (e: any) => {
       e.preventDefault();
       fetch(singleProjectAPI, {
         method: 'DELETE'

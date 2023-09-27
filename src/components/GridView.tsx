@@ -2,8 +2,19 @@ import React from "react";
 import { useState, useEffect } from "react"
 import { Link } from 'react-router-dom'
 
+interface ProjectItem {
+    _id: number,
+    name: string,
+    details: string,
+    steps: string,
+    time: number,
+    category: string,
+    materials: string,
+    cost: number
+}
+
 function GridView () {
-    const [ projects, setProjects ] = useState([]);
+    const [ projects, setProjects ] = useState<ProjectItem[]>([]);
 
     useEffect(() => {
         const gridProjectAPI = `https://nailed-it-server.herokuapp.com/projects`
