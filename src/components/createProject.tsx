@@ -41,10 +41,9 @@ function ProjectForm() {
           <label className="ml-52 text-lg" htmlFor="projectDetails">Project Details</label>
           <textarea
             className="w-1/2 text-sm font-semibold border border-zinc-400 px-3 py-2 rounded-lg shadow-sm mx-auto focus:outline-none focus:border-amber-600"
-            type="text"
             name="details"
-            rows="5"
-            cols="20"
+            rows={5}
+            cols={20}
             value={details}
             onChange={(e) => setDetails(e.target.value)}
           />
